@@ -1,0 +1,64 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Name of the routine task"
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional details about the task"
+    },
+    "alarm_time": {
+      "type": "string",
+      "description": "Time for the alarm in HH:MM format"
+    },
+    "alarm_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the alarm is active"
+    },
+    "repeat_days": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ]
+      },
+      "description": "Days to repeat the alarm"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "morning",
+        "afternoon",
+        "evening",
+        "anytime"
+      ],
+      "default": "anytime",
+      "description": "Time category for the task"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether task is completed for today"
+    },
+    "icon": {
+      "type": "string",
+      "default": "circle",
+      "description": "Icon identifier for the task"
+    }
+  },
+  "required": [
+    "title",
+    "alarm_time"
+  ]
+}
